@@ -1,0 +1,302 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background-image:url("background.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:#fff;
+    font-family:Poppins,sans-serif;
+    overflow-x:hidden;
+}
+
+#loader{
+position:fixed;
+width:100%;
+height:100vh;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#loader img{
+width:220px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 50px;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:red;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+height:100vh;
+background:url("bg2.jpeg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.7);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:6rem;
+font-family:Anton;
+letter-spacing:5px;
+}
+
+.hero p{
+font-size:1.3rem;
+margin-top:10px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 40px;
+background:red;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.btn:hover{
+box-shadow:0 0 30px red;
+}
+
+section{
+padding:120px 10%;
+text-align:center;
+}
+
+h2{
+font-size:4rem;
+font-family:Anton;
+margin-bottom:20px;
+}
+
+.products{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.card{
+width:350px;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px red;
+}
+
+.card img{
+width:100%;
+display:block;
+}
+
+.info h4{
+font-size:2rem;
+color:red;
+margin:20px 0;
+}
+
+.info button{
+padding:15px 40px;
+background:red;
+border:none;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+.coming-badge{
+display:inline-block;
+background:#ffd400;
+color:black;
+padding:12px 25px;
+border-radius:50px;
+font-weight:bold;
+animation:flash 1.5s infinite;
+}
+
+@keyframes flash{
+50%{
+transform:scale(1.1);
+}
+}
+
+.rossi-grid{
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.rossi-grid img{
+width:320px;
+border-radius:20px;
+box-shadow:0 0 30px #ffd400;
+}
+
+.rossi-text{
+max-width:700px;
+margin:auto;
+margin-top:30px;
+line-height:1.8;
+}
+
+form{
+display:flex;
+flex-direction:column;
+max-width:500px;
+margin:auto;
+gap:15px;
+}
+
+input,textarea{
+padding:15px;
+background:#111;
+border:1px solid #333;
+color:white;
+}
+
+form button{
+padding:15px;
+background:red;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.checkout-card {
+  background: #111;
+  border: 1px solid #333;
+  padding: 25px;
+  max-width: 450px;
+  margin: 30px auto;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255,0,0,0.2);
+}
+
+.checkout-card h3 {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.checkout-card input,
+.checkout-card select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #000;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+}
+
+.checkout-card input:focus,
+.checkout-card select:focus {
+  border-color: red;
+  box-shadow: 0 0 10px red;
+}
+
+.whatsapp-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  background: linear-gradient(45deg, #25D366, #128C7E);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #25D366;
+}
+
+footer{
+padding:50px;
+border-top:1px solid #222;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+nav ul{
+display:none;
+}
+
+}
