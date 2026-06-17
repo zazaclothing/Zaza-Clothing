@@ -39,17 +39,28 @@ ZAZA
 
 <div class="overlay"></div>
 
-<div class="hero-content">
+<video autoplay muted loop class="hero-video">
+  <source src="hero-fifa-2026.mp4" type="video/mp4">
+</video>
 
+<div class="smoke"></div>
+
+<div class="hero-content">
+  
 <h1>ZAZA CLOTHING</h1>
 
 <p>WORN BY THE FEARLESS</p>
 
-<a href="#drop" class="btn">
-SHOP NOW
+<div class="hero-content">
+  
+<h1>10 SECONDS. 3 LEGENDS. ONE FINAL ERA.</h1>
+
+<a href="#collection" class="btn">
+ENTER COLLECTION
 </a>
 
 </div>
+
 
 </section>
 
@@ -59,20 +70,21 @@ SHOP NOW
 
 <h3>SPIDER STREET TEE</h3>
 
-<div class="products">
+<div class="product-slider">
 
-<div class="card">
+<img
+id="spiderImage"
+src="spider tee front.jpeg">
 
-<img src="spider tee front.jpeg">
+<div class="controls">
+
+<button onclick="prevImage()">◀</button>
+
+<button onclick="nextImage()">▶</button>
 
 </div>
 
-<div class="card">
-
-<img src="spider tee back.jpeg">
-
 </div>
-
 </div>
 
 <div class="info">
@@ -88,6 +100,37 @@ Oversized unisex streetwear tee inspired by night riders.
 <button onclick="addToCart()">
 ADD TO CART
 </button>
+
+</div>
+
+</section>
+
+<section id="collection">
+
+<h2>FIFA 2026 LEGENDS DROP</h2>
+
+<div class="fifa-grid">
+
+  <div onclick="openProduct('messi')">
+    <video autoplay muted loop>
+      <source src="player-messi.mp4">
+    </video>
+    <h3>MESSI</h3>
+  </div>
+
+  <div onclick="openProduct('ronaldo')">
+    <video autoplay muted loop>
+      <source src="player-ronaldo.mp4">
+    </video>
+    <h3>RONALDO</h3>
+  </div>
+
+  <div onclick="openProduct('neymar')">
+    <video autoplay muted loop>
+      <source src="player-neymar.mp4">
+    </video>
+    <h3>NEYMAR</h3>
+  </div>
 
 </div>
 
@@ -136,13 +179,16 @@ More than motorcycles.
 
 ZAZA Project represents the fearless spirit of riders and streetwear culture.
 
-<section id="contact">
+</p>
+</section>
 
-<h2>CONTACT US</h2>
+<div class="contact-details">
+    <h3>CONNECT WITH ZAZA</h3>
 
-<p>0766517421</p>
-<p>0758517102</p>
-<p>@zaza_clothing7</p>
+    <p>+94 76 651 7421</p>
+    <p>+94 75 851 7102</p>
+    <p>@zaza_clothing7</p>
+</div>
 
 <div class="checkout-card">
 
@@ -153,12 +199,12 @@ ZAZA Project represents the fearless spirit of riders and streetwear culture.
 <input id="phone" placeholder="Phone">
 
 <select id="payment">
-  <option value="COD">💵 Cash on Delivery</option>
-  <option value="Card">💳 Card Payment</option>
+  <option value="COD"> Cash on Delivery</option>
+  <option value="Card"> Card Payment</option>
 </select>
 
 <button class="whatsapp-btn" type="button" onclick="sendWhatsAppOrder()">
-  📲 Order on WhatsApp
+   Order on WhatsApp
 </button>
 
 </div>
@@ -167,7 +213,6 @@ ZAZA Project represents the fearless spirit of riders and streetwear culture.
 
 </section>
 
-</section>
 
 <footer>
 
@@ -178,6 +223,34 @@ ZAZA Project represents the fearless spirit of riders and streetwear culture.
 </footer>
 
 <script src="script.js"></script>
+
+<div id="modal" class="modal">
+
+  <div class="modal-content">
+
+    <span onclick="closeProduct()" class="close">&times;</span>
+
+    <h2 id="product-title"></h2>
+
+    <div class="shirt-gallery">
+      <img id="product-front">
+      <img id="product-back">
+    </div>
+
+    <select id="fifa-size">
+      <option value="S">Size S</option>
+      <option value="M">Size M</option>
+      <option value="L">Size L</option>
+      <option value="XL">Size XL</option>
+    </select>
+
+    <button class="whatsapp-order-btn" onclick="orderFifaShirt()">
+      Order on WhatsApp
+    </button>
+
+  </div>
+
+</div>
 
 </body>
 </html>
