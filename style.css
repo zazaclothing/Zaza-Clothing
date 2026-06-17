@@ -230,34 +230,31 @@ section h3{
    FIFA COLLECTION
 ========================= */
 .fifa-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:25px;
+    flex-wrap:wrap;
     margin-top:40px;
 }
 
-.fifa-grid div{
+.fifa-grid > div{
+    width:260px;
     background:#111;
     border-radius:20px;
     overflow:hidden;
-    cursor:pointer;
-    transition:.4s;
-}
-
-.fifa-grid div:hover{
-    transform:translateY(-10px);
+    text-align:center;
 }
 
 .fifa-grid video{
-    width:100%;
-    height:420px;
+    width:260px;
+    height:380px;
     object-fit:cover;
+    display:block;
 }
 
 .fifa-grid h3{
-    padding:20px;
-    font-family:'Anton',sans-serif;
-    letter-spacing:2px;
+    padding:15px;
 }
 
 /* =========================
@@ -398,23 +395,22 @@ footer h2{
 /* =========================
    MOBILE
 ========================= */
-@media(max-width:768px){
+@media (max-width:768px){
 
-.hero-content h1{
-    font-size:3rem;
-}
+  .fifa-grid{
+      flex-direction:column;
+      align-items:center;
+  }
 
-nav ul{
-    gap:12px;
-}
+  .fifa-grid > div{
+      width:90%;
+      max-width:320px;
+  }
 
-nav ul li a{
-    font-size:12px;
-}
-
-.fifa-grid video{
-    height:320px;
-}
+  .fifa-grid video{
+      width:100%;
+      height:360px;
+  }
 
 }
 
@@ -505,15 +501,16 @@ nav ul li a{
 }
 
 @media (max-width:768px){
-
   .fifa-grid{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
   .fifa-grid video{
-    height:350px;
+    width: 90%;
+    max-width: 320px;
+    height: 360px;
   }
-
 }
 
 @media (max-width:768px){
@@ -660,4 +657,178 @@ nav ul li a{
   color: black;
   text-decoration: none;
   font-weight: bold;
+}
+
+.product-card {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* DOTS */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 3px;
+  background: gray;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: white;
+}
+
+/* BUTTONS */
+.quick-buy, .add-cart {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+}
+
+.quick-buy {
+  background: white;
+  color: black;
+}
+
+.add-cart {
+  background: black;
+  color: white;
+  border: 1px solid white;
+}
+
+/* STICKY BAR (mobile only) */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+
+.sticky-bar button {
+  width: 100%;
+  padding: 15px;
+}
+
+/* CART DRAWER */
+.cart-drawer {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: white;
+  color: black;
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.cart-drawer.open {
+  bottom: 0;
+}
+
+/* MOBILE ONLY */
+@media(max-width:768px){
+  .sticky-bar {
+    display: block;
+  }
+}
+
+
+.desktop-images {
+  display: flex;
+  gap: 10px;
+}
+
+.desktop-images img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+/* SLIDER hidden on desktop */
+.slider,
+.dots {
+  display: none;
+}
+
+/* MOBILE VIEW */
+@media (max-width:768px){
+
+  .desktop-images {
+    display: none;
+  }
+
+  .slider {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .slide {
+    width: 100%;
+    display: none;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
+    margin: 3px;
+    border-radius: 50%;
+    background: gray;
+  }
+
+  .dot.active {
+    background: white;
+  }
+}
+
+@media (max-width:768px){
+  .modal-content{
+    width:95%;
+    margin:40px auto;
+    padding:15px;
+  }
+
+  .shirt-gallery img{
+    width:100%;
+    max-width:280px;
+  }
+
+  #fifa-size{
+    width:100%;
+  }
 }

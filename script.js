@@ -182,3 +182,59 @@ I would like to place an order.`;
     "_blank"
   );
 }
+
+
+function initSlider(sliderId) {
+  const slider = document.getElementById(sliderId);
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll(".slide");
+  const dots = slider.parentElement.querySelectorAll(".dot");
+
+  let index = 0;
+
+  function show(i) {
+    slides.forEach(s => s.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active"));
+
+    slides[i].classList.add("active");
+    dots[i].classList.add("active");
+  }
+
+  // auto slide
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    show(index);
+  }, 3000);
+
+  // dots click
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      index = i;
+      show(i);
+    });
+  });
+
+  // swipe
+  let startX = 0;
+
+  slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX > endX + 50) {
+      index = (index + 1) % slides.length;
+    } else if (startX < endX - 50) {
+      index = (index - 1 + slides.length) % slides.length;
+    }
+
+    show(index);
+  });
+}
+
+// INIT
+initSlider("slider1");
+
